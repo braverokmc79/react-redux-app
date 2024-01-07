@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import rootReducer from './reducers';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 
 
@@ -22,12 +23,14 @@ console.log(" store.getState()  ", store.getState());
 
 const render=()=>root.render(
   <React.StrictMode>
+    <Provider store={store} >
     <App 
       value={store.getState()} 
       countValue={store.getState().counter }
       onIncrement={() => store.dispatch({ type: 'IINCREMENT' })}
       onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
     />
+    </Provider>
   </React.StrictMode>
 );
 
