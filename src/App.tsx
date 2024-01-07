@@ -1,17 +1,21 @@
 import React from 'react';
 import './App.css';
 
-
 type Props={
-  value:number,
+  value:any,
+  countValue:number,
   onIncrement:()=>void,
   onDecrement:()=>void  
 }
 
-function App({value,onIncrement, onDecrement} : Props) {
+
+function App({value,countValue ,onIncrement, onDecrement} : Props) {
+
+
   return (
     <div className="App">
-        Cliked : {value?  value:'times'}
+    
+         Cliked : { countValue ?  countValue:'times'} 
         <button onClick={onIncrement}>
           +
         </button>
